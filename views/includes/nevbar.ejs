@@ -1,0 +1,174 @@
+<style>
+/* Navbar Base */
+.navbar {
+  background: #fff;
+  border-bottom: 2px solid #e0e0e0;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+  padding: 0.5rem 1rem;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+/* Brand Icon */
+.navbar-brand {
+  font-size: 1.8rem;
+  color: #007bff;
+  font-weight: 700;
+}
+
+.navbar-brand:hover {
+  color: #0056b3;
+  text-decoration: none;
+}
+
+/* Navbar links */
+.nav-link {
+  color: #333;
+  margin: 0 0.5rem;
+  font-weight: 500;
+  text-transform: capitalize;
+  transition: color 0.3s ease;
+}
+
+.nav-link:hover {
+   background-color: #f0f0f0;
+  color: #007bff;
+  border-radius: 18px;
+}
+
+/* Search form */
+.d-flex {
+  width: 100%;
+  max-width: 500px; /* max width for search on large screens */
+  margin-left: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+/* Search input styling */
+.search-inp {
+  flex: 1; /* take all available space in the flex container */
+  min-width: 200px; /* ensures it doesn’t shrink too small */
+  border-radius: 25px;
+  padding: 0.5rem 1.5rem;
+  border: 1px solid #ccc;
+  text-align: left; /* left align text inside */
+  font-size: 1rem;
+  transition: 0.3s ease;
+}
+
+.search-inp:focus {
+  outline: none;
+  border-color: #007bff;
+  box-shadow: 0 0 6px rgba(0,123,255,0.3);
+}
+
+
+/* Search button */
+.btn-search {
+  background-color: #fe424d;
+  color: #fff;
+  border-radius: 25px;
+  padding: 0.5rem 1.2rem;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  transition: 0.3s ease;
+  border: none;
+}
+
+.btn-search i {
+  margin-right: 0.5rem;
+  font-size: 1rem;
+}
+
+.btn-search:hover {
+  background-color: #d7363f;
+  color: #fff;
+  transform: translateY(-2px);
+}
+
+/* Navbar flex containers */
+.navbar-nav.ms-auto {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+/* Buttons and links styling */
+.navbar-nav.ms-auto a.nav-link {
+  padding: 0.4rem 0.8rem;
+  border-radius: 20px;
+  transition: 0.3s ease;
+}
+
+.navbar-nav.ms-auto a.nav-link:hover {
+  background-color: #f0f0f0;
+  color: #007bff;
+}
+
+/* Responsive adjustments */
+@media (max-width: 992px) {
+  .d-flex {
+    max-width: 100%;
+    margin-left: 0;
+    margin-top: 0.5rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .navbar-nav.ms-auto {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+    margin-top: 0.5rem;
+  }
+
+  .search-inp {
+    width: 100%;
+  }
+
+  .btn-search {
+    width: 100%;
+    justify-content: center;
+  }
+}
+</style>
+<nav class="navbar navbar-expand-md bg-body-light border-bottom sticky-top">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="/listing"><i class="fa-solid fa-compass"></i></a>
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-bs-toggle="collapse"
+      data-bs-target="#navbarNavAltMarkup"
+    >
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+      <div class="navbar-nav">
+        <a class="nav-link" href="/listing">explore</a> 
+      </div>
+
+      <div class="navbar-nav ms-auto">
+         <form class="d-flex" role="search" method="get" action="/listing">
+      <input class="form-control me-2 search-inp" type="search" placeholder="Search Disteniation" name="q"/>
+      <button class="btn btn-search" type="submit"><i class="fa-solid fa-magnifying-glass"></i>Search</button>
+    </form>
+      </div>
+ 
+      <div class="navbar-nav ms-auto">
+        <a class="nav-link" href="/listing/new"><strong>List your home</strong></a>
+        <% if(!currUser) {%>
+        <a class="nav-link" href="/signup"><strong>Sign up</strong></a>
+        <a class="nav-link" href="/login"><strong>Log in</strong></a>
+        <% } %>
+        <% if(currUser) {%>
+        <a class="nav-link" href="/logout"><strong>Log out</strong></a>
+         <% } %>
+      </div>
+      </div>
+  </div>
+</nav>
