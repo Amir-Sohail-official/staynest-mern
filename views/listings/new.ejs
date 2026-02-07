@@ -1,0 +1,117 @@
+<% layout("/layouts/boilerplate.ejs") %>
+<style>
+  
+  button.btn-dark {
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  padding: 12px 20px;
+  font-size: 1rem;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.3s ease;
+  width: 100%;
+  margin-top: 20px;
+}
+
+button.btn-dark:hover {
+  background-color: #0056b3;
+  transform: translateY(-2px);
+}
+</style>
+ <body>
+  <div class="form-page">
+    <form action="/listing" method="post" novalidate class="needs-validation" enctype="multipart/form-data">
+      <div>
+        <label for="title" class="form-label">title</label>
+        <input
+          type="text"
+          placeholder="enter your title"
+          name="listing[title]"
+          class="form-control"
+          required
+        />
+        <div class="valid-feedback">you enter good title</div>
+      </div>
+
+      <div>
+        <label for="description" class="form-label">description</label>
+        <textarea
+          name="listing[description]"
+          placeholder="enter you description"
+          rows="10"
+          cols="45"
+          class="form-control"
+          required
+        ></textarea>
+        <div class="invalid-feedback">please enter valid short discription</div>
+      </div>
+
+       <div>
+        <label for="image" class="form-label">Upload Image</label>
+        <input
+          type="file"
+          name="listing[image]"
+          class="form-control"
+          required
+        />
+      </div>
+
+      <div>
+        <label for="price" class="form-label">price</label>
+        <input
+          type="number"
+          placeholder="enter your price"
+          name="listing[price]"
+          class="form-control"
+          required
+        />
+        <div class="invalid-feedback">please enter valid price</div>
+      </div>
+
+      <div>
+        <label for="location" class="form-label">location</label>
+        <input
+          type="text"
+          placeholder="enter your location"
+          name="listing[location]"
+          class="form-control"
+          required
+        />
+        <div class="invalid-feedback">please enter valid location</div>
+      </div>
+
+      <div>
+        <label for="country" class="form-label">country</label>
+        <input
+          type="text"
+          placeholder="enter your country"
+          name="listing[country]"
+          class="form-control"
+          required
+        />
+        <div class="invalid-feedback">please enter valid country name</div>
+      </div>
+      <div>
+  <label for="category" class="form-label">Category</label>
+  <select name="listing[category]" id="category" class="form-select" required>
+    <option value="">Select a category</option>
+    <option value="trending">Trending</option>
+    <option value="homes">Homes</option>
+    <option value="iconic cities">Iconic Cities</option>
+    <option value="mountains">Mountains</option>
+    <option value="castles">Castles</option>
+    <option value="amazing pools">Amazing Pools</option>
+    <option value="amping">amping</option>
+    <option value="farms">Farms</option>
+    <option value="arctic">Arctic</option>
+  </select>
+</div>
+
+
+      <button class="btn btn-dark">add</button>
+    </form>
+    </div>
+    
+  </body>
+
