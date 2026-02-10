@@ -6,8 +6,8 @@
   "scripts": {
     "start": "node index.js"
   },
-  "engines": {
-    "node": "18.x"
+ "engines": {
+    "node": "v22.14.0"
   },
   "dependencies": {
     "cloudinary": "^1.41.3",
