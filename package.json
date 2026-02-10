@@ -2,10 +2,10 @@
   "name": "wanderlust",
   "version": "1.0.0",
   "description": "Airbnb clone project for listings and reviews",
-  "main": "index.js",
+  "main": "api/index.js",
   "scripts": {
-    "start": "node index.js"
-  },
+  "start": "node api/index.js"
+},
  "engines": {
     "node": "v22.14.0"
   },
